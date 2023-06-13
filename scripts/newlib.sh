@@ -42,7 +42,7 @@ mkdir -p ${SRC_DIR}
 
 cd ${DOWNLOAD_DIR}
 mkdir -p ${BUILD_DIR}/${NEWLIB_DIR}
-tar zxvf ${NEWLIB_ARCHIVE} -C ${SRC_DIR}
+tar zxf ${NEWLIB_ARCHIVE} -C ${SRC_DIR}
 
 export CC_FOR_TARGET=${PROGRAM_PREFIX}gcc
 export LD_FOR_TARGET=${PROGRAM_PREFIX}ld

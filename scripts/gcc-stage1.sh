@@ -46,7 +46,7 @@ mkdir -p ${SRC_DIR}
 
 cd ${DOWNLOAD_DIR}
 mkdir -p ${BUILD_DIR}/${GCC_DIR}_stage1
-tar xvf ${GCC_ARCHIVE} -C ${SRC_DIR}
+tar xf ${GCC_ARCHIVE} -C ${SRC_DIR}
 
 # 事前にダウンロードしておいたライブラリをコピー
 cp {gmp,mpfr,mpc,isl}-* ${SRC_DIR}/${GCC_DIR}

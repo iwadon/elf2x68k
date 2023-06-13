@@ -40,7 +40,7 @@ mkdir -p ${SRC_DIR}
 
 cd ${DOWNLOAD_DIR}
 mkdir -p ${BUILD_DIR}/${BINUTILS_DIR}
-tar jxvf ${BINUTILS_ARCHIVE} -C ${SRC_DIR}
+tar jxf ${BINUTILS_ARCHIVE} -C ${SRC_DIR}
 
 cd ${BUILD_DIR}/${BINUTILS_DIR}
 ${SRC_DIR}/${BINUTILS_DIR}/configure \
