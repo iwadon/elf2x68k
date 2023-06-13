@@ -48,7 +48,7 @@ mkdir -p ${SRC_DIR}
 mkdir -p ${BUILD_DIR}/${GCC_DIR}_stage2
 
 cd ${BUILD_DIR}/${GCC_DIR}_stage2
-`realpath --relative-to=./ ${SRC_DIR}/${GCC_DIR}`/configure \
+`${REALPATH} --relative-to=./ ${SRC_DIR}/${GCC_DIR}`/configure \
     --prefix=${INSTALL_DIR} \
     --program-prefix=${PROGRAM_PREFIX} \
     --target=${TARGET} \
@@ -62,11 +62,11 @@ cd ${BUILD_DIR}/${GCC_DIR}_stage2
     --disable-shared \
     --disable-threads \
 
-make -j${NUM_PROC} 2<&1 | tee build.gcc-stage2.1.log
+${MAKE} -j${NUM_PROC} 2<&1 | tee build.gcc-stage2.1.log
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
 	exit 1;
 fi
-make install-strip 2<&1 | tee build.gcc-stage2.2.log
+${MAKE} install-strip 2<&1 | tee build.gcc-stage2.2.log
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
 	exit 1;
 fi

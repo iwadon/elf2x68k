@@ -79,7 +79,7 @@ cd ${SRC_DIR}/${GCC_DIR}
 ./contrib/download_prerequisites
 
 cd ${BUILD_DIR}/${GCC_DIR}_stage1
-`realpath --relative-to=./ ${SRC_DIR}/${GCC_DIR}`/configure \
+`${REALPATH} --relative-to=./ ${SRC_DIR}/${GCC_DIR}`/configure \
     --prefix=${INSTALL_DIR} \
     --program-prefix=${PROGRAM_PREFIX} \
     --target=${TARGET} \
@@ -94,11 +94,11 @@ cd ${BUILD_DIR}/${GCC_DIR}_stage1
     --disable-shared \
     --disable-threads \
 
-make -j${NUM_PROC} all-gcc 2<&1 | tee build.gcc-stage1.1.log
+${MAKE} -j${NUM_PROC} all-gcc 2<&1 | tee build.gcc-stage1.1.log
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
 	exit 1;
 fi
-make install-gcc 2<&1 | tee build.gcc-stage1.2.log
+${MAKE} install-gcc 2<&1 | tee build.gcc-stage1.2.log
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
 	exit 1;
 fi

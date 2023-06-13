@@ -41,7 +41,7 @@ ${M68K_TOOLCHAIN}/bin/m68k-xelf-gcc -dumpspecs > ${M68K_TOOLCHAIN}/lib/gcc/m68k-
 cat src/x68k.specs >> ${M68K_TOOLCHAIN}/lib/gcc/m68k-elf/specs
 mv ${M68K_TOOLCHAIN}/lib/gcc/m68k-elf/specs ${M68K_TOOLCHAIN}/lib/gcc/m68k-elf/[0-9]*
 
-(cd src/libx68k; make) || exit 1
+(cd src/libx68k; ${MAKE}) || exit 1
 cp src/libx68k/libx68k.a ${M68K_TOOLCHAIN}/m68k-elf/lib
 cp src/libx68k/libx68knodos.a ${M68K_TOOLCHAIN}/m68k-elf/lib
 cp src/libx68k/libiocs/libiocs.a ${M68K_TOOLCHAIN}/m68k-elf/lib
