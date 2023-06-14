@@ -56,7 +56,7 @@ uninstall:
 clean:
 	-rm -rf build_gcc
 	-rm -rf m68k-xelf
-	${MAKE} clean -C src/libx68k
+	$(MAKE) clean -C src/libx68k
 
 pristine: clean
 	-rm -rf download

@@ -17,10 +17,10 @@ CRT0OBJS += crt0.o crt0nodos.o
 all: $(TARGET) $(CRT0OBJS) libiocs.a libdos.a
 
 libiocs.a:
-	${MAKE} -C libiocs all
+	$(MAKE) -C libiocs all
 
 libdos.a:
-	${MAKE} -C libdos all
+	$(MAKE) -C libdos all
 
 libx68k.a: $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
@@ -37,6 +37,6 @@ libx68knodos.a: $(OBJS_NODOS)
 	$(AS) $(ASFLAGS) -c $<
 
 clean:
-	${MAKE} -C libiocs clean
-	${MAKE} -C libdos clean
+	$(MAKE) -C libiocs clean
+	$(MAKE) -C libdos clean
 	-rm -f *.o $(TARGET)
