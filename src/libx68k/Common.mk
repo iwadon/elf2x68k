@@ -1,9 +1,9 @@
 CROSS = m68k-xelf-
-CC = $(CROSS)gcc
-AS = $(CROSS)gcc
-LD = $(CROSS)gcc
-AR = $(CROSS)ar
-RANLIB = $(CROSS)ranlib
+override CC = $(CROSS)gcc
+override AS = $(CROSS)gcc
+override LD = $(CROSS)gcc
+override AR = $(CROSS)ar
+override RANLIB = $(CROSS)ranlib
 
-CFLAGS = -m68000 -I.
-ASFLAGS = -m68000 -I.
+override CFLAGS = -m68000 -I.
+override ASFLAGS = -m68000 -I.
